@@ -54,7 +54,11 @@ function listDirectory (folder) {
       if (error) {
         reject()
       } else {
-        resolve(result.map((item) => path.join(folder, item)))
+        resolve(result.filter((item) => {
+          return item !== '.git'
+        }).map((item) => {
+          return path.join(folder, item)
+        }))
       }
     })
   })

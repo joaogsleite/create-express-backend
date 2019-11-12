@@ -2,17 +2,12 @@
 const { scaffold } = require(`${__root}/utils/template`)
 
 module.exports.questions = [
-  { type: 'input', name: 'aValue', message: 'Variable a value?', default: 1 },
-  { type: 'input', name: 'bValue', message: 'Variable b value?', default: 'example' },
+  { type: 'input', name: 'projectName', message: 'Project name?', default: 'example-project' },
 ]
 
-module.exports.run = function ({ confirmed, aValue, bValue }) {
+module.exports.run = function (options) {
   console.log('Creating package.json...')
   console.log('Installing node modules...')
   console.log('Generating project file structure...')
-  const options = {
-    a: aValue,
-    b: bValue,
-  }
   scaffold('default', options)
 }
