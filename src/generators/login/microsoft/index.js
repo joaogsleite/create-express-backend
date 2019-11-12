@@ -6,10 +6,10 @@ module.exports.questions = [
 ]
 
 module.exports.run = function (answers) {
-  console.log('Creating local login passport strategy...')
+  console.log('Creating microsoft login passport strategy...')
   console.log('Creating login routes...')
   const options = {}
-  scaffold('login/local', options)
+  scaffold('login/microsoft', options)
 }
 
 

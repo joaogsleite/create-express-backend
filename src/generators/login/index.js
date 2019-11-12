@@ -1,7 +1,7 @@
 const local = require('./local')
-const oauth = require('./oauth')
+const microsoft = require('./microsoft')
 
 module.exports = {
   local,
-  oauth,
+  microsoft,
 }

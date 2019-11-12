@@ -29,8 +29,10 @@ if (cli.list) {
   utils.print('Listing generators:')
   utils.listGenerators()
 } else if (cli.args.length === 0){
-  utils.print(green('Running project init generator.'))
-  utils.runGenerator(require('./generators/default'))
+  if (!global.aGeneratorWasFound) {
+    utils.print(green('Running project init generator.'))
+    utils.runGenerator(require('./generators/default'))
+  }
 } else if(!global.aGeneratorWasFound) {
   utils.print('Generator', red(cli.args[0]), 'not found.')
   utils.print('Available generators:')
