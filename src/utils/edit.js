@@ -11,11 +11,11 @@ function queryContent (fileContent, checkContent) {
   return fileContent.match(checkContent)
 }
 
-function addContentAfter (fileContent, query, contentToAdd, linesAfter = 1) {
-  const lines = contentToLines(fileContent)
-  for (const index in lines) {
+function addContentAfter (fileContent, query, contentToAdd, linesAfter = 0) {
+  let lines = contentToLines(fileContent)
+  for (let index = 0; index < lines.length; index++) {
     if (queryContent(lines[index], query)) {
-      lines.splice(index + linesAfter, 0, contentToAdd)
+      lines.splice(index + linesAfter, 0 ,contentToAdd)
       return linesToContent(lines)
     }
   }
@@ -24,4 +24,9 @@ function addContentAfter (fileContent, query, contentToAdd, linesAfter = 1) {
 
 function addContentBefore (fileContent, query, contentToAdd, linesBefore = 0) {
   return addContentAfter(fileContent, query, contentToAdd, -linesBefore)
+}
+
+module.exports = {
+  addContentAfter,
+  addContentBefore,
 }
