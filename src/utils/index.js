@@ -4,7 +4,7 @@ const chalk = require('chalk')
 const cli = require('commander')
 
 // sub utils functions
-const listGenerators = require('./list-generators')
+const listGenerators = require(`${__root}/utils/list-generators`)
 
 
 function print(...text) {

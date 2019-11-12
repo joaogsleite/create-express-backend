@@ -1,4 +1,4 @@
-const generators = require(`${root}/generators`)
+const generators = require(`${__root}/generators`)
 
 module.exports = function () {
   for (const generator in generators) {

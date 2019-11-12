@@ -1,7 +1,7 @@
 
 # create-express-backend
 
-Example `create-<package>` package to init projects with `npm init <package>`
+Generator to scaffold Express backend projects using `npm init express-backend`
 
 
 ## Usage

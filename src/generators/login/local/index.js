@@ -1,5 +1,5 @@
 
-const { addNewRoute } = require(`${root}/shared/routes`)
+const { addNewRoute } = require(`${__root}/shared/routes`)
 
 module.exports.questions = [
   { type: 'confirm', name: 'confirmed', message: 'Confirm?', default: false },
@@ -10,7 +10,7 @@ module.exports.run = function (answers) {
   console.log('Creating login routes...')
   addNewRoute('routes/index.js', 'userRouter', './user', '/api/user')
   const options = {}
-  scaffold('./src/templates/login/local', options)
+  scaffold('login/local', options)
 }
 
 

@@ -1,5 +1,5 @@
 
-const { scaffold } = require(`${root}/utils/template`)
+const { scaffold } = require(`${__root}/utils/template`)
 
 module.exports.questions = [
   { type: 'confirm', name: 'confirmed', message: 'Confirm?', default: false },
@@ -15,5 +15,5 @@ module.exports.run = function ({ aValue, bValue }) {
     a: aValue,
     b: bValue,
   }
-  scaffold('./src/templates/default', options)
+  scaffold('default', options)
 }

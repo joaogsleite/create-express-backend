@@ -1,6 +1,6 @@
 const ejs = require('ejs')
 const path = require('path')
-const { writeFile, recursiveList } = require('./fs')
+const { writeFile, recursiveList } = require(`${__root}/utils/fs`)
 
 
 function render(file, data) {
@@ -16,8 +16,9 @@ function render(file, data) {
   })
 }
 
-const destination = path.resolve('./')
-function scaffold (sourcePath, options) {
+const destination = path.resolve(process.env.NPM_TEST_DEST || './')
+function scaffold (source, options) {
+  const sourcePath = path.join(__root, 'templates', source)
   return recursiveList(sourcePath).then((files) => {
     const promises = files.map((filePath) => {
       return render(filePath, options).then((content) => {
