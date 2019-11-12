@@ -1,6 +1,13 @@
 
 # create-express-backend
 
+![node][node]
+[![npm version][npm-badge]][npm]
+[![dependencies Status][dependencies-badge]][dependencies]
+[![devDependencies Status][dev-dependencies-badge]][dev-dependencies]
+[![PRs Welcome][prs-badge]][prs]
+[![GitHub][license-badge]][license]
+
 Generator to scaffold Express backend projects using `npm init express-backend`
 
 
@@ -85,3 +92,20 @@ module.exports = {
 ```
 npm init express-backend <generator>:<sub-generator>
 ```
+
+[node]: https://img.shields.io/node/v/create-express-backend.svg
+
+[npm-badge]: https://badge.fury.io/js/create-express-backend.svg
+[npm]: https://badge.fury.io/js/create-express-backend
+
+[dependencies-badge]: https://david-dm.org/joaogsleite/create-express-backend/status.svg
+[dependencies]: https://david-dm.org/joaogsleite/create-express-backend
+
+[dev-dependencies-badge]: https://david-dm.org/joaogsleite/create-express-backend/dev-status.svg
+[dev-dependencies]: https://david-dm.org/joaogsleite/create-express-backend?type=dev
+
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
+[prs]: http://makeapullrequest.com
+
+[license-badge]: https://img.shields.io/github/license/joaogsleite/create-express-backend.svg
+[license]: https://github.com/joaogsleite/create-express-backend/blob/master/LICENSE
