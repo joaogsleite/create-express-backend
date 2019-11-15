@@ -8,7 +8,6 @@ const { getTemplateFolder } = require(`${__root}/utils/git`)
 function render(file, data) {
   return new Promise((resolve, reject) => {
     const EJS_NO_OPTIONS = {}
-    console.log(file)
     return ejs.renderFile(file, data, EJS_NO_OPTIONS, (error, content) => {
       if (error) {
         reject(error)
@@ -27,7 +26,9 @@ async function scaffold (source, options) {
       return render(filePath, options).then((content) => {
         const relativePath = path.resolve(filePath).substring(path.resolve(sourcePath).length)
         const destinationPath = path.join(destination, relativePath)
-        return writeFile(destinationPath, content)
+        return writeFile(destinationPath, content).then(() => {
+          return filePath
+        })
       })
     })
     return Promise.all(promises)
