@@ -1,4 +1,5 @@
 
+const { print } = require(`${__root}/utils`)
 const { scaffold } = require(`${__root}/utils/template`)
 const npm = require(`${__root}/utils/npm`)
 
@@ -7,11 +8,12 @@ module.exports.questions = [
 ]
 
 module.exports.run = async function (options) {
-  console.log('Creating package.json...')
-  console.log('Generating project file structure...')
+  print('Creating package.json...')
+  print('Generating project file structure...')
   const files = await scaffold('default', options)
   console.log(files.join('\n'))
-  console.log('Installing node modules...')
+  print('Installing node modules...')
   const installation = await npm.install()
   console.log(installation)
+  print('Your project is ready!')
 }
