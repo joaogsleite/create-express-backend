@@ -27,7 +27,11 @@ async function scaffold (source, options) {
         const relativePath = path.resolve(filePath).substring(path.resolve(sourcePath).length)
         const destinationPath = path.join(destination, relativePath)
         return writeFile(destinationPath, content).then(() => {
-          return filePath
+          if (filePath.includes('/create-express-backend')) {
+            return filePath.split('/create-express-backend')[1]
+          } else {
+            return filePath
+          }
         })
       })
     })
