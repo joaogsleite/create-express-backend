@@ -1,5 +1,7 @@
 {
   "name": "create-express-backend",
+  "//name": "@joaogsleite/create-express-backend",
+  "//publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "version": "0.0.23",
   "description": "",
   "main": "./src/index.js",
